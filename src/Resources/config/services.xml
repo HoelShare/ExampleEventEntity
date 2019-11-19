@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="ExampleEventEntity\Core\Example\ExampleDefinition">
+            <tag name="shopware.entity.definition" entity="example"/>
+        </service>
+
+        <service id="ExampleEventEntity\Controller\ExampleController" public="true">
+            <argument id="debug.event_dispatcher" type="service"/>
+            <argument id="example.repository"  type="service"/>
+        </service>
+    </services>
+</container>
